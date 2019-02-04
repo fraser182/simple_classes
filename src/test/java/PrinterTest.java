@@ -33,6 +33,11 @@ public class PrinterTest {
         assertEquals(300, printer.getNumberOfSheetsOfPaper());
         assertEquals(500, printer.refill());
     }
+
+    @Test
+    public void tonerCheck(){
+        assertEquals(600, printer.print(200, 1));
+    }
 }
 
 

@@ -10,27 +10,27 @@ public class CalculatorTest {
 
     @Before
     public void before(){
-    calculator = new Calculator(5, 7);
+    calculator = new Calculator();
     }
 
     @Test
     public void doesAddition(){
-        assertEquals(12, calculator.addition());
+        assertEquals(12, calculator.addition(5, 7));
     }
 
     @Test
     public void doesSubtraction(){
-        assertEquals(-2, calculator.subtraction());
+        assertEquals(-2, calculator.subtraction(5, 7));
     }
 
     @Test
     public void doesMultiplication(){
-        assertEquals(35, calculator.multiplication());
+        assertEquals(35, calculator.multiplication(5, 7));
     }
 
     @Test
     public void doesDivision(){
-        assertEquals(0.71, calculator.division(), 0.01);
+        assertEquals(0.71, calculator.division(5, 7), 0.01);
 
     }
 
