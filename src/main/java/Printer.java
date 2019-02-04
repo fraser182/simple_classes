@@ -32,5 +32,3 @@ public class Printer {
     }
 }
 
-//        Add a toner volume property to the class.
-//        Modify the printer so that it reduces the toner by 1 for each page printed.
