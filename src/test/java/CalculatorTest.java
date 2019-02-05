@@ -6,16 +6,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
-    Calculator calculator;
+    Calculator calculator; // defined here so it can be seen in all the tests
 
     @Before
     public void before(){
     calculator = new Calculator();
     }
 
+    // cmd + n to generate a test method
     @Test
     public void doesAddition(){
-        assertEquals(12, calculator.addition(5, 7));
+        int result = calculator.addition(5,7);
+        assertEquals(12, result);
     }
 
     @Test
@@ -30,7 +32,7 @@ public class CalculatorTest {
 
     @Test
     public void doesDivision(){
-        assertEquals(0.71, calculator.division(5, 7), 0.01);
+        assertEquals(2, calculator.division(10, 5));
 
     }
 

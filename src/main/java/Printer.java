@@ -1,5 +1,6 @@
 public class Printer {
 
+    private int initialNumberOfSheets;
     private int sheetsOfPaperLeft;
     private int tonerVolume;
 
@@ -7,6 +8,7 @@ public class Printer {
 
     public Printer(int sheetsOfPaperLeft, int tonerVolume){
         this.sheetsOfPaperLeft = sheetsOfPaperLeft;
+        this.initialNumberOfSheets = sheetsOfPaperLeft;
         this.tonerVolume = tonerVolume;
     }
 
@@ -14,20 +16,28 @@ public class Printer {
         return this.sheetsOfPaperLeft;
     }
 
-    public int print(int pages, int copies){
-        if ((this.sheetsOfPaperLeft >= pages * copies) && (this.sheetsOfPaperLeft <= this.tonerVolume) ) {
+    public void print(int pages, int copies){
+        if (canPrint(pages, copies)){ // if the result of canPrint is true, do the following (!canPrint means if false
             this.sheetsOfPaperLeft -= pages * copies;
             this.tonerVolume -= pages * copies;
         }
-        return this.sheetsOfPaperLeft;
     }
 
-
-
-    public int refill(){
-        if (this.sheetsOfPaperLeft < 500){
-        this.sheetsOfPaperLeft = 500;
+    public boolean canPrint(int pages, int copies){
+        int totalSheets = pages * copies;
+        if (this.sheetsOfPaperLeft >= totalSheets && this.tonerVolume >= totalSheets){
+            return true;
         }
-        return this.sheetsOfPaperLeft;
+        return false;
     }
+
+    public void refill() {
+    this.sheetsOfPaperLeft = initialNumberOfSheets;
+
+    }
+
+
+//    public void getToner() {
+//    this.tonerVolume =
+//    }
 }

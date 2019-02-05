@@ -8,30 +8,33 @@ public class WaterBottleTest {
     WaterBottle waterbottle;
 
     @Before
+    // before below can be anything
+    // this Before is created before each test, otherwise the value would be affected.
     public void before(){
     waterbottle = new WaterBottle();
     }
 
     @Test
-    public void hasVolume(){
+    public void shouldStartWithVolume100(){
         assertEquals(100, waterbottle.getVolume());
     }
 
     @Test
     public void takesDrink(){
-        assertEquals(90, waterbottle.drink());
+        waterbottle.drink();
+        assertEquals(90, waterbottle.getVolume());
     }
 
     @Test
     public void emptyWaterBottle(){
-        assertEquals(0, waterbottle.empty());
+        waterbottle.empty();
+        assertEquals(0, waterbottle.getVolume());
     }
 
     @Test
     public void refillWaterBottle(){
-        waterbottle.drink();
-        waterbottle.drink();
         waterbottle.empty();
-        assertEquals(100, waterbottle.fill());
+        waterbottle.refill();
+        assertEquals(100, waterbottle.getVolume());
     }
 }
