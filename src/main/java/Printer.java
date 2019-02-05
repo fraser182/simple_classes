@@ -5,9 +5,9 @@ public class Printer {
 
 //    CONSTRUCTOR
 
-    public Printer(int sheetsOfPaperLeft){
+    public Printer(int sheetsOfPaperLeft, int tonerVolume){
         this.sheetsOfPaperLeft = sheetsOfPaperLeft;
-        this.tonerVolume = 800;
+        this.tonerVolume = tonerVolume;
     }
 
     public int getNumberOfSheetsOfPaper(){
@@ -31,4 +31,3 @@ public class Printer {
         return this.sheetsOfPaperLeft;
     }
 }
-
